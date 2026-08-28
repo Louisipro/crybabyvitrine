@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cry-Baby Tattoo — Studio de tatouage à Aix-en-Provence</title>
+<meta name="description" content="Cry-Baby Tattoo, studio de tatouage au cœur d'Aix-en-Provence. Tatouages réalistes, ornementaux et floraux sur mesure. 14 Rue Matheron, 13100 Aix-en-Provence.">
+<link rel="icon" type="image/jpeg" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Cinzel:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F2E8D8;
+    --cream-soft:#FAF5EB;
+    --cream-line: rgba(34,30,25,.10);
+    --ink:#221E19;
+    --ink-soft:#6E6559;
+    --teal:#254661;
+    --teal-deep:#1A3345;
+    --teal-soft:#4E7590;
+    --terracotta:#A9724C;
+    --gold:#B08D57;
+    --r-xl:36px;
+    --r-lg:26px;
+    --r-md:18px;
+    --r-sm:12px;
+    --r-pill:999px;
+    --shadow: 0 20px 50px rgba(34,30,25,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'Yeseva One', serif;
+    font-weight:400;
+  }
+  .spaced-caps{
+    font-family:'Cinzel', serif;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  section{position:relative;}
+
+  /* ---------- BRAND (logo centré en tête de hero) ---------- */
+  .brand-hero{
+    display:flex;flex-direction:column;align-items:center;gap:18px;margin-bottom:34px;
+  }
+  .brand-hero img{
+    width:104px;height:104px;border-radius:50%;object-fit:cover;
+    box-shadow:0 14px 30px rgba(34,30,25,.22);
+  }
+  .brand-hero-word{
+    font-family:'Yeseva One', serif;font-size:clamp(30px,4.2vw,42px);color:var(--ink);
+    text-align:center;line-height:1;
+  }
+  .brand-hero-word span{color:var(--teal);}
+  .brand-hero-sub{
+    display:block;margin-top:8px;
+    font-family:'Cinzel', serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    display:flex;align-items:center;
+    padding:90px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-stack{
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+    position:relative;z-index:1;
+  }
+  .blob{
+    position:absolute;border-radius:60% 40% 55% 45% / 45% 55% 45% 55%;
+    background:var(--teal);opacity:.10;filter:blur(2px);z-index:0;
+  }
+  .blob-1{width:520px;height:520px;top:-120px;right:-140px;}
+  .blob-2{width:340px;height:340px;bottom:-100px;left:-100px;background:var(--terracotta);opacity:.08;}
+
+  .hero h1{
+    font-size:clamp(38px, 5vw, 62px);
+    line-height:1.06;letter-spacing:-.01em;
+    color:var(--ink);
+  }
+  .hero h1 span{color:var(--teal);}
+  .hero p{
+    max-width:480px;margin:22px auto 0;font-size:17px;color:var(--ink-soft);
+  }
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;justify-content:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:15px 30px;font-size:14px;font-weight:600;
+    border-radius:var(--r-pill);transition:transform .2s, background .2s, color .2s, box-shadow .2s;
+  }
+  .btn-primary{background:var(--teal);color:var(--cream-soft);box-shadow:0 12px 26px rgba(37,70,97,.30);}
+  .btn-primary:hover{background:var(--teal-deep);transform:translateY(-2px);}
+  .btn-ghost{background:var(--cream-soft);color:var(--ink);border:1px solid var(--cream-line);}
+  .btn-ghost:hover{background:#fff;transform:translateY(-2px);}
+
+  .hero-photo{
+    position:relative;border-radius:var(--r-xl);overflow:hidden;
+    width:100%;max-width:900px;aspect-ratio:16/9;box-shadow:var(--shadow);
+    margin-top:50px;
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;}
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Cinzel',serif;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);
+    margin-bottom:16px;
+  }
+  .kicker::before{content:"";width:22px;height:2px;background:var(--teal);border-radius:2px;}
+  .sec-title{font-size:clamp(30px,4.2vw,46px);letter-spacing:-.01em;margin-bottom:20px;}
+  .sec-pad{padding:100px 0;}
+  .center{text-align:center;}
+  .center .kicker{justify-content:center;}
+  .center .sec-title{max-width:640px;margin-left:auto;margin-right:auto;}
+
+  /* ---------- ABOUT ---------- */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+  .about-text p{color:var(--ink-soft);margin-bottom:16px;font-size:16.5px;max-width:520px;}
+  .about-text .quote{
+    margin-top:26px;padding:20px 24px;background:var(--cream-soft);
+    border-radius:var(--r-lg);border:1px solid var(--cream-line);
+    font-family:'Cinzel',serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);
+  }
+  .about-photos{position:relative;height:520px;}
+  .about-photos .ph{
+    position:absolute;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow);
+  }
+  .about-photos .ph img{width:100%;height:100%;object-fit:cover;}
+  .about-photos .ph-1{width:66%;height:78%;top:0;left:0;}
+  .about-photos .ph-2{width:52%;height:52%;bottom:0;right:0;border:6px solid var(--cream);}
+
+  /* ---------- ARTIST SECTION ---------- */
+  .artist-sec{background:var(--cream-soft);padding:76px 0;}
+  .artist-strip-wrap{
+    border-radius:var(--r-xl);box-shadow:var(--shadow);
+  }
+  .artist-strip{
+    border-radius:inherit;overflow:hidden;
+    aspect-ratio:21/9;
+  }
+  .artist-strip img{
+    display:block;width:100%;height:100%;object-fit:cover;object-position:center 22%;
+    border-radius:inherit;
+  }
+  .artist-below{max-width:680px;margin:36px auto 0;text-align:center;}
+  .artist-quote{
+    font-family:'Yeseva One',serif;font-weight:400;font-style:italic;
+    font-size:clamp(19px,2.4vw,24px);line-height:1.5;color:var(--ink);
+  }
+  .artist-styles{margin-top:20px;font-size:15px;color:var(--teal);letter-spacing:.02em;}
+  .artist-styles strong{font-weight:700;}
+  .artist-signature{
+    margin-top:16px;font-family:'Cinzel',serif;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink-soft);
+  }
+
+  /* ---------- SPECIALTIES ---------- */
+  #specialites{padding:48px 0;}
+  .specs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .spec-card{
+    background:var(--cream-soft);border:1px solid var(--cream-line);
+    border-radius:var(--r-lg);padding:38px 30px;transition:transform .25s, box-shadow .25s;
+  }
+  .spec-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .spec-icon{
+    width:52px;height:52px;border-radius:var(--r-md);background:rgba(37,70,97,.10);
+    display:flex;align-items:center;justify-content:center;margin-bottom:22px;color:var(--teal);
+    font-size:26px;line-height:1;
+  }
+  .spec-card h3{font-size:21px;margin-bottom:10px;color:var(--ink);}
+  .spec-card p{color:var(--ink-soft);font-size:15px;}
+
+  /* ---------- PORTFOLIO ---------- */
+  .portfolio-sec{padding-top:56px;}
+  .portfolio-title{font-size:clamp(36px,5vw,54px);margin-bottom:8px;}
+  .portfolio-intro{margin-bottom:36px;}
+  .portfolio-cat{margin-top:44px;}
+  .portfolio-cat:first-of-type{margin-top:0;}
+  .cat-title{
+    text-align:center;font-size:clamp(22px,3vw,28px);margin-bottom:20px;color:var(--teal);
+  }
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .gal-item{
+    aspect-ratio:4/5;position:relative;overflow:hidden;border-radius:var(--r-lg);
+    background:var(--cream-soft);border:1px solid var(--cream-line);
+    transition:transform .25s, box-shadow .25s;
+  }
+  .gal-item:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .gal-item img{width:100%;height:100%;object-fit:cover;}
+  .gallery-note{margin-top:40px;color:var(--ink-soft);font-size:14.5px;text-align:center;}
+  .gallery-note a{color:var(--teal);font-weight:600;border-bottom:1px solid var(--teal);}
+
+  /* ---------- INFOS ---------- */
+  .infos-card{
+    background:var(--cream-soft);border:1px solid var(--cream-line);
+    border-radius:var(--r-xl);padding:56px;box-shadow:var(--shadow);
+  }
+  .infos{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .info-block h3{font-size:19px;margin-bottom:18px;color:var(--ink);}
+  table.hours{width:100%;border-collapse:collapse;font-size:15px;}
+  table.hours td{padding:10px 0;border-bottom:1px solid var(--cream-line);color:var(--ink-soft);}
+  table.hours td:first-child{color:var(--ink);font-weight:500;width:50%;}
+  table.hours tr.closed td:last-child{color:var(--terracotta);font-weight:600;}
+  .addr-block p{color:var(--ink-soft);margin-bottom:4px;}
+  .addr-block a.map-link{
+    display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13.5px;font-weight:600;
+    color:var(--teal);
+  }
+  .addr-photo{
+    border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/10;margin-bottom:22px;
+    border:1px solid var(--cream-line);
+  }
+  .addr-photo img{width:100%;height:100%;object-fit:cover;}
+  .map-wrap{position:relative;margin-top:22px;border-radius:var(--r-lg);overflow:hidden;
+    border:1px solid var(--cream-line);box-shadow:var(--shadow);}
+  .map-frame{
+    display:block;aspect-ratio:16/10;width:100%;border:0;filter:saturate(.85) contrast(1.02);
+  }
+  .map-pin{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-100%);pointer-events:none;
+    filter:drop-shadow(0 6px 10px rgba(34,30,25,.35));
+  }
+  .map-badge{
+    position:absolute;top:14px;left:14px;background:rgba(250,245,235,.94);backdrop-filter:blur(6px);
+    padding:8px 14px;border-radius:var(--r-pill);font-size:12.5px;font-weight:600;color:var(--ink);
+    box-shadow:var(--shadow);
+  }
+  .map-open{
+    position:absolute;bottom:14px;right:14px;background:var(--teal);color:var(--cream-soft);
+    padding:9px 16px;border-radius:var(--r-pill);font-size:12.5px;font-weight:600;
+    box-shadow:0 8px 18px rgba(37,70,97,.35);transition:background .2s, transform .2s;
+  }
+  .map-open:hover{background:var(--teal-deep);transform:translateY(-2px);}
+
+  /* ---------- CONTACT / CTA ---------- */
+  .contact-card{
+    background:var(--teal);border-radius:var(--r-xl);
+    text-align:center;padding:90px 40px;position:relative;overflow:hidden;
+  }
+  .contact-card .blob{background:var(--cream-soft);opacity:.06;}
+  .contact-card .kicker{color:var(--cream-soft);}
+  .contact-card .kicker::before{background:var(--cream-soft);}
+  .contact-card h2{color:var(--cream-soft);font-size:clamp(30px,4.6vw,50px);margin-bottom:16px;position:relative;}
+  .contact-card p{color:rgba(250,245,235,.75);max-width:460px;margin:0 auto 38px;position:relative;}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;}
+  .contact-links .btn-primary{background:var(--cream-soft);color:var(--teal-deep);box-shadow:none;}
+  .contact-links .btn-primary:hover{background:#fff;}
+  .contact-links .btn-ghost{background:rgba(250,245,235,.10);color:var(--cream-soft);border:1px solid rgba(250,245,235,.25);}
+  .contact-links .btn-ghost:hover{background:rgba(250,245,235,.18);}
+
+  .back-to-top{
+    display:flex;justify-content:center;margin-top:28px;
+  }
+  .back-to-top a{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:12.5px;font-weight:500;color:var(--ink-soft);
+    padding:8px 16px;border-radius:var(--r-pill);
+    transition:color .2s, background .2s;
+  }
+  .back-to-top a:hover{color:var(--teal);background:var(--cream-soft);}
+  .back-to-top svg{width:13px;height:13px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:44px 0 34px;}
+  .foot-wrap{
+    display:flex;justify-content:space-between;
+    align-items:center;flex-wrap:wrap;gap:14px;
+  }
+  footer p{font-size:12.5px;color:var(--ink-soft);}
+  footer .foot-links{display:flex;gap:22px;}
+  footer .foot-links a{font-size:12.5px;color:var(--ink-soft);font-weight:500;}
+  footer .foot-links a:hover{color:var(--teal);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .brand-hero img{width:80px;height:80px;}
+    .hero-photo{aspect-ratio:4/5;}
+    .about, .infos{grid-template-columns:1fr;gap:40px;}
+    .about-photos{height:380px;}
+    .specs{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .artist-strip{aspect-ratio:4/3;}
+    .infos-card{padding:34px 26px;}
+  }
+  @media (max-width:520px){
+    .gallery{grid-template-columns:1fr 1fr;}
+    .cta-row{flex-direction:column;align-items:stretch;}
+    .btn{justify-content:center;}
+    .contact-card{padding:64px 24px;}
+  }
+
+
+</style>
+</head>
+<body>
+
+<!-- ---------- HERO ---------- -->
+<section class="hero" id="top">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="wrap hero-stack">
+    <div class="brand-hero">
+      <img src="images/logo.jpg" alt="Logo Cry-Baby Tattoo">
+      <div class="brand-hero-word">Cry-<span>Baby</span><span class="brand-hero-sub">Tattoo</span></div>
+    </div>
+    <h1>Un <span>tatouage</span><br>pensé pour vous</h1>
+    <p>Cry-Baby Tattoo, c'est le studio de Markus au cœur d'Aix-en-Provence. Tatouages <strong>réaliste, traditionnel, ornemental, Fine lines</strong>, dessinés sur mesure.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
+      <a href="https://www.instagram.com/crybaby.aix/" target="_blank" rel="noopener" class="btn btn-ghost">Voir l'Instagram</a>
+    </div>
+    <div class="hero-photo">
+      <img src="images/salon_2.jpg" alt="Intérieur du studio Cry-Baby Tattoo à Aix-en-Provence">
+    </div>
+  </div>
+</section>
+
+<!-- ---------- ABOUT ---------- -->
+<section class="sec-pad" id="about">
+  <div class="wrap about">
+    <div class="about-photos">
+      <div class="ph ph-1"><img src="images/studio-chair.jpeg" alt="Intérieur du studio Cry-Baby Tattoo, chaise et poste de travail"></div>
+      <div class="ph ph-2"><img src="images/salon_2.jpg" alt="Salon d'accueil du studio Cry-Baby Tattoo, décor vintage"></div>
+    </div>
+    <div class="about-text">
+      <div class="kicker">Le Shop</div>
+      <h2 class="sec-title">L'encre a ses raisons</h2>
+      <p>Installé au 14 Rue Matheron, à deux pas du Palais de Justice et de l'Hôtel de Ville, Cry-Baby Tattoo est le studio de Markus.</p>
+      <p>Un espace chaleureux, pensé comme un vrai lieu de vie : chaque projet est travaillé sur mesure, du premier échange jusqu'au dessin final, capable d'exécuter des pièces en styles : <strong>réaliste, traditionnel, ornemental, Fine lines</strong>.</p>
+      <div class="quote">— Markus, Cry-Baby Tattoo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- ARTIST STRIP ---------- -->
+<section class="artist-sec">
+  <div class="wrap">
+    <div class="artist-strip-wrap">
+      <div class="artist-strip">
+        <img src="images/tatoueur.png" alt="Markus au travail dans le studio Cry-Baby Tattoo">
+      </div>
+    </div>
+    <div class="artist-below">
+      <div class="kicker" style="justify-content:center;">L'artiste</div>
+      <p class="artist-quote">« Amoureux du tatouage depuis plus de 20 ans, je me suis essayé à plusieurs styles, et je n'ai jamais réussi à me limiter à un seul d'entre eux. Je prends plaisir à tatouer tout les projets que vous pouvez imaginer, cités ci-dessous. »</p>
+      <p class="artist-styles"><strong>Réaliste</strong> · <strong>Traditionnel</strong> · <strong>Ornemental</strong> · <strong>Fine line</strong></p>
+      <div class="artist-signature">— Markus, Cry-Baby Tattoo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- SPECIALTIES ---------- -->
+<section class="sec-pad" id="specialites">
+  <div class="wrap center">
+    <div class="kicker">Spécialités</div>
+    <h2 class="sec-title">Ce qu'on tatoue ici</h2>
+  </div>
+  <div class="wrap">
+    <div class="specs">
+      <div class="spec-card">
+        <div class="spec-icon">🎨</div>
+        <h3>Réalisme</h3>
+        <p>Visages, animaux, textures, un rendu précis noir et gris, travaillé pour durer dans le temps.</p>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🏰</div>
+        <h3>Traditionnel</h3>
+        <p>Motifs inspirés des styles Old School et Neo Traditionnel, un combot original.</p>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🌹</div>
+        <h3>Fine Lines / Floral / Ornemental</h3>
+        <p>Lettering, fleurs, végétaux, bouquets, ornements, des compositions délicates en fines lignes ou en plein noir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- PORTFOLIO ---------- -->
+<section class="sec-pad portfolio-sec" id="portfolio">
+  <div class="wrap center portfolio-intro">
+    <h2 class="sec-title portfolio-title">— Portfolio —</h2>
+  </div>
+
+  <div class="wrap portfolio-cat">
+    <h3 class="cat-title">— Réalisme —</h3>
+    <div class="gallery">
+      <div class="gal-item"><img src="images/real_t1.jpg" alt="Tatouage réaliste, portrait du Christ et cœur sacré sur avant-bras"></div>
+      <div class="gal-item"><img src="images/real_t2.jpg" alt="Tatouage réaliste, portrait de gorille noir et gris"></div>
+      <div class="gal-item"><img src="images/real_t3.jpg" alt="Tatouage réaliste, manchette aviation et portraits noir et gris"></div>
+      <div class="gal-item"><img src="images/real_t4.jpg" alt="Tatouage réaliste, manchette aviation et portraits noir et gris"></div>
+    </div>
+  </div>
+
+  <div class="wrap portfolio-cat">
+    <h3 class="cat-title">— Traditionnel —</h3>
+    <div class="gallery">
+      <div class="gal-item"><img src="images/trad_t1.jpg" alt="Tatouage traditionnel, guerrière samouraï et fleurs de cerisier"></div>
+      <div class="gal-item"><img src="images/trad_t2.jpg" alt="Tatouage traditionnel, papillon et visage de femme"></div>
+      <div class="gal-item"><img src="images/trad_t3.jpg" alt="Tatouage traditionnel, tête de loup rugissant"></div>
+      <div class="gal-item"><img src="images/trad_t4.jpg" alt="Tatouage traditionnel, visage de femme fragmenté façon cubiste"></div>
+    </div>
+  </div>
+
+  <div class="wrap portfolio-cat">
+    <h3 class="cat-title">— Ornemental —</h3>
+    <div class="gallery">
+      <div class="gal-item"><img src="images/orn_t1.jpg" alt="Tatouage ornemental, manchette florale, mandala et renard"></div>
+      <div class="gal-item"><img src="images/orn_t2.jpg" alt="Tatouage ornemental, roses et papillon"></div>
+      <div class="gal-item"><img src="images/orn_t3.jpg" alt="Tatouage ornemental, mandala et lionnes"></div>
+      <div class="gal-item"><img src="images/orn_t4.jpg" alt="Tatouage ornemental, scarabée et fleur"></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p class="gallery-note">Le portfolio complet est mis à jour en continu sur <a href="https://www.instagram.com/crybaby.aix/" target="_blank" rel="noopener">Instagram — @crybaby.aix</a>.</p>
+  </div>
+</section>
+
+<!-- ---------- INFOS PRATIQUES ---------- -->
+<section class="sec-pad" id="infos">
+  <div class="wrap">
+    <div class="infos-card">
+      <div class="infos">
+        <div class="info-block addr-block">
+          <h3>Adresse &amp; accès</h3>
+          <div class="addr-photo"><img src="images/devanture.jpg" alt="Devanture du studio Cry-Baby Tattoo, 14 Rue Matheron"></div>
+          <p>Cry-Baby Tattoo</p>
+          <p>14 Rue Matheron</p>
+          <p>13100 Aix-en-Provence</p>
+          <p>À deux pas du Palais de Justice et de l'Hôtel de Ville.</p>
+          <div class="map-wrap">
+            <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=14%20Rue%20Matheron%2C%2013100%20Aix-en-Provence&z=16&output=embed">
+            </iframe>
+            <div class="map-badge">14 Rue Matheron</div>
+            <svg class="map-pin" width="34" height="44" viewBox="0 0 34 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 0C7.6 0 0 7.6 0 17c0 12.7 17 27 17 27s17-14.3 17-27C34 7.6 26.4 0 17 0z" fill="#254661"/>
+              <circle cx="17" cy="17" r="6.5" fill="#FAF5EB"/>
+            </svg>
+            <a class="map-open" href="https://maps.google.com/?daddr=14%20Rue%20Matheron%2C%2013100%20Aix-en-Provence" target="_blank" rel="noopener">Itinéraire →</a>
+          </div>
+        </div>
+        <div class="info-block">
+          <h3>Horaires</h3>
+          <table class="hours">
+            <tr><td>Lundi</td><td>12:30 – 19:00</td></tr>
+            <tr><td>Mardi</td><td>12:30 – 19:00</td></tr>
+            <tr><td>Mercredi</td><td>12:30 – 19:00</td></tr>
+            <tr><td>Jeudi</td><td>12:30 – 19:00</td></tr>
+            <tr><td>Vendredi</td><td>12:30 – 19:00</td></tr>
+            <tr><td>Samedi</td><td>12:30 – 19:00</td></tr>
+            <tr class="closed"><td>Dimanche</td><td>Fermé</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- CONTACT ---------- -->
+<section class="sec-pad" id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div class="blob blob-1" style="top:-160px;right:-160px;"></div>
+      <div class="kicker center" style="justify-content:center;display:flex;">Contact</div>
+      <h2>Un projet en tête ?</h2>
+      <p>Écris, appelle, ou passe directement au studio pour en discuter avec Markus.</p>
+      <div class="contact-links">
+        <a href="tel:+33682092810" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          06 82 09 28 10
+        </a>
+        <a href="mailto:crybabytattoo.aix@gmail.com" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          crybabytattoo.aix@gmail.com
+        </a>
+        <a href="https://www.instagram.com/crybaby.aix/" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+          @crybaby.aix
+        </a>
+      </div>
+    </div>
+    <div class="back-to-top">
+      <a href="#top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        Retour en haut
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-wrap">
+    <p style="display:flex;align-items:center;gap:10px;">
+      <img src="images/logo.jpg" alt="Logo Cry-Baby Tattoo" style="width:26px;height:26px;border-radius:50%;object-fit:cover;">
+      © 2026 Cry-Baby Tattoo — 14 Rue Matheron, 13100 Aix-en-Provence
+    </p>
+    <div class="foot-links">
+      <a href="https://www.instagram.com/crybaby.aix/" target="_blank" rel="noopener">Instagram</a>
+      <a href="tel:+33682092810">Téléphone</a>
+      <a href="mailto:crybabytattoo.aix@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
